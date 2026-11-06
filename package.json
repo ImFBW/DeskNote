@@ -1,0 +1,67 @@
+{
+  "name": "desknote",
+  "version": "1.0.0",
+  "private": true,
+  "description": "本地桌面便签，可选同步到自己的服务器",
+  "main": "electron/main.js",
+  "author": "DeskNote",
+  "scripts": {
+    "start": "electron .",
+    "smoke": "node scripts/smoke.js",
+    "server": "node server/server.js",
+    "selftest": "node scripts/selftest.js",
+    "dist": "electron-builder --win nsis --x64",
+    "dist:mac": "electron-builder --mac dmg"
+  },
+  "devDependencies": {
+    "electron": "45.2.3",
+    "electron-builder": "26.18.0"
+  },
+  "dependencies": {
+    "koffi": "3.3.7"
+  },
+  "build": {
+    "appId": "com.desknote.desktop",
+    "productName": "DeskNote",
+    "directories": {
+      "output": "dist",
+      "buildResources": "assets"
+    },
+    "files": [
+      "electron/**/*",
+      "renderer/**/*",
+      "shared/**/*",
+      "docs/**/*",
+      "assets/icon.png",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "**/node_modules/koffi/**"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "assets/icon.png",
+      "category": "public.app-category.productivity"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "DeskNote"
+    }
+  }
+}

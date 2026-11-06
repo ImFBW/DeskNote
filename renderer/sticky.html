@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>便签</title>
+  <link rel="stylesheet" href="sticky.css">
+</head>
+<body>
+  <header>
+    <div class="drag"></div>
+    <input id="title" class="title">
+    <button type="button" id="top" title="置顶">顶</button>
+    <button type="button" id="pin" title="固定到桌面">桌</button>
+    <button type="button" id="through" title="鼠标穿透">穿</button>
+    <button type="button" id="close" title="收回">收</button>
+  </header>
+  <textarea id="content"></textarea>
+  <article id="preview" class="hidden"></article>
+  <div id="todos"></div>
+  <footer>
+    <button type="button" id="mode">预览</button>
+    <input id="opacity" type="range" min="35" max="100" value="100">
+  </footer>
+  <script src="markdown.js"></script>
+  <script src="sticky.js"></script>
+</body>
+</html>

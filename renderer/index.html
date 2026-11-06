@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>DeskNote</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-theme="paper">
+  <div id="app">
+    <nav class="rail">
+      <div class="brand">DN</div>
+      <button type="button" data-view="notes" class="active">便签</button>
+      <button type="button" data-view="todos">待办</button>
+      <button type="button" data-view="reminders">提醒</button>
+      <button type="button" data-view="logs">日志</button>
+      <button type="button" data-view="settings">设置</button>
+      <button type="button" data-view="help">说明</button>
+    </nav>
+    <section id="view-notes" class="workspace">
+      <aside id="cats" class="cats pad"></aside>
+      <div id="list" class="list pad"></div>
+      <div id="editor" class="editor"></div>
+      <aside id="props" class="props"></aside>
+    </section>
+    <section id="view-todos" class="page hidden"></section>
+    <section id="view-reminders" class="page hidden"></section>
+    <section id="view-logs" class="page hidden"></section>
+    <section id="view-settings" class="page hidden"></section>
+    <section id="view-help" class="page hidden"></section>
+  </div>
+  <div id="toast" class="toast"></div>
+  <div id="status" class="status"></div>
+  <div id="modal" class="modal hidden"></div>
+  <script src="markdown.js"></script>
+  <script src="sound.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

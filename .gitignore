@@ -1,0 +1,11 @@
+node_modules/
+dist/
+server/data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+initial_admin.txt
+.venv/
+__pycache__/
+*.pyc
+.DS_Store

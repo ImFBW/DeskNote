@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>提醒</title>
+  <style>
+    body { margin: 0; font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: #fffdf8; color: #243036; }
+    .card { border: 1px solid #e2d3a4; border-left: 6px solid #0f6e6b; margin: 8px; padding: 12px 14px; border-radius: 12px; }
+    button { border: 0; background: #0f6e6b; color: white; border-radius: 8px; padding: 6px 10px; }
+    .muted { color: #6f685e; font-size: 13px; }
+    .row { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <strong id="title"></strong>
+    <p id="body" class="muted"></p>
+    <div class="row"><span class="muted">DeskNote</span><button type="button" id="open">查看</button></div>
+  </div>
+  <script src="sound.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    document.getElementById("title").textContent = params.get("title") || "提醒";
+    document.getElementById("body").textContent = params.get("body") || "";
+    if (params.get("sound") === "1") playChime();
+    const closeLater = setTimeout(() => window.close(), 8000);
+    document.getElementById("open").addEventListener("click", () => {
+      clearTimeout(closeLater);
+      window.desknote.invoke("bubble:open", { noteId: params.get("noteId") || "" });
+    });
+  </script>
+</body>
+</html>

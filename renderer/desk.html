@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>DeskNote</title>
+  <link rel="stylesheet" href="desk.css">
+</head>
+<body>
+  <header>
+    <div class="drag" title="拖动"></div>
+    <input id="title" class="title">
+    <button type="button" id="style" title="外观">样</button>
+    <button type="button" id="top" title="置顶">顶</button>
+    <button type="button" id="pin" title="贴进桌面">贴</button>
+    <button type="button" id="through" title="鼠标穿透">穿</button>
+    <button type="button" id="lock" title="锁定位置">锁</button>
+    <button type="button" id="close" title="从桌面收回">收</button>
+  </header>
+  <div id="body"></div>
+  <section id="style-panel" class="hidden"></section>
+  <p id="status"></p>
+  <script src="markdown.js"></script>
+  <script src="desk.js"></script>
+</body>
+</html>

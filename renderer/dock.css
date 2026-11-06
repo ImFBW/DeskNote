@@ -1,0 +1,9 @@
+body { margin: 0; padding: 10px; background: #fffdf8; color: #243036; font: 14px "Segoe UI", "Microsoft YaHei", sans-serif; display: grid; gap: 8px; }
+.drag { -webkit-app-region: drag; font-weight: 700; }
+button, input, label, p { -webkit-app-region: no-drag; }
+button { border: 0; border-radius: 8px; padding: 7px 8px; background: #0f6e6b; color: white; }
+button#clear, button#main, button#admin { background: #efeae0; color: #243036; }
+label { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+input { width: 64px; }
+p { margin: 0; color: #667077; font-size: 12px; }
+#status { color: #9a3b3b; }

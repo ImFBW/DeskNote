@@ -1,0 +1,13 @@
+html, body { margin: 0; height: 100%; background: transparent; color: #243036; font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+body { display: flex; flex-direction: column; height: 100vh; }
+header { display: grid; grid-template-columns: 18px 1fr repeat(4, 28px); gap: 4px; align-items: center; padding: 8px; }
+.drag { height: 18px; border-radius: 6px; background: rgba(36, 48, 54, .16); -webkit-app-region: drag; }
+.title { border: 0; background: transparent; font-weight: 680; min-width: 0; }
+button, input, textarea, article { -webkit-app-region: no-drag; }
+textarea, #preview, #todos { margin: 0 8px; }
+textarea { flex: 1; border: 0; resize: none; background: transparent; line-height: 1.55; font: inherit; }
+#preview { flex: 1; overflow: auto; }
+#todos { max-height: 40%; overflow: auto; }
+footer { display: flex; gap: 8px; align-items: center; padding: 8px; }
+.hidden { display: none; }
+.todo { display: flex; gap: 6px; align-items: center; font-size: 13px; }

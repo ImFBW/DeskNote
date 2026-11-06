@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>DeskNote</title>
+  <link rel="stylesheet" href="dock.css">
+</head>
+<body>
+  <header class="drag">DeskNote</header>
+  <button type="button" id="note">新便签</button>
+  <button type="button" id="todo">新待办</button>
+  <button type="button" id="reminder">新提醒</button>
+  <label>桌面上限 <input id="limit" type="number" min="1" max="30" value="8"></label>
+  <p id="count"></p>
+  <button type="button" id="clear">关闭全部穿透</button>
+  <button type="button" id="main">主窗口</button>
+  <button type="button" id="admin">后台</button>
+  <p id="status"></p>
+  <script src="dock.js"></script>
+</body>
+</html>
